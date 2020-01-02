@@ -184,15 +184,15 @@ public class InvertedIndex {
         SaveIndexThread hilos[] = new SaveIndexThread[numHilos];  //Array de hilos.
         Set<String> KeySet = hashGlobal.keySet();
 	
-    long portionSize;
-    int hilo=0;
-    // Bucle para recorrer los hilos.
-        for (int i = 0; i < KeySet.size(); i += portionSize) {
-            portionSize=((KeySet.size()-i)/(numHilos-hilo));
-            hilos[hilo] = new SaveIndexThread(hashGlobal, outputDirectory, portionSize, i);
-            hilos[hilo].start();
-            hilo++;
-        }
+        long portionSize;
+        int hilo=0;
+        // Bucle para recorrer los hilos.
+            for (int i = 0; i < KeySet.size(); i += portionSize) {
+                portionSize=((KeySet.size()-i)/(numHilos-hilo));
+                hilos[hilo] = new SaveIndexThread(hashGlobal, outputDirectory, portionSize, i);
+                hilos[hilo].start();
+                hilo++;
+            }
     }
 
 
@@ -214,41 +214,37 @@ public class InvertedIndex {
 
     public class SaveIndexThread extends Thread {
 
-        int numberOfFiles, remainingFiles;
+        long numberOfFiles, remainingFiles;
         long remainingKeys = 0, keysByFile = 0;
         String key = "";
         Charset utf8 = StandardCharsets.UTF_8;
-        Set<String> keySet;
-        Iterator keyIterator;
         Set<String> KeySet;
+        Iterator keyIterator;
         String outputDirectory;
-        HashMultimap<String, Long> hashLocal = HashMultimap.create();
         long portionSize;
         int i;
 
-        SaveIndexThread(HashMultimap<String, Long> hashLocal, String outputDirectory, long portionSize, int i) {
-            KeySet = hashLocal.keySet();
+        SaveIndexThread(HashMultimap<String, Long> hashGlobal, String outputDirectory, long portionSize, int i) {
+            KeySet = hashGlobal.keySet();
             this.i = i;
             this.portionSize = portionSize;
+            this.outputDirectory = outputDirectory;
         }
 
         public void run() {
 
-            keyIterator = keySet.iterator();
-            remainingKeys = keySet.size();
-            remainingFiles = numberOfFiles;
-
-            for (int j = 0; j < KeySet.size(); j++) {
-                if (j < i || j >= i + portionSize) {
-                    hashLocal.removeAll(hashLocal.toString().toCharArray()[j]);
-                }
-            }
-
-            // Calculamos el número de ficheros a crear en función del núemro de claves que hay en el hash.
-            if (keySet.size() > DIndexMaxNumberOfFiles / numHilos)
+            // Calculamos el número de ficheros a crear en función del número de claves que hay en la porcion del hash.
+            if (portionSize > DIndexMaxNumberOfFiles / numHilos)
                 numberOfFiles = DIndexMaxNumberOfFiles / numHilos;
             else
-                numberOfFiles = keySet.size();
+                numberOfFiles = portionSize;
+
+            keyIterator = KeySet.iterator();
+            long index = 0;  //posicion del iterador en la hash
+            remainingKeys = portionSize;
+            remainingFiles = numberOfFiles;
+
+
             // Bucle para recorrer los ficheros de indice a crear.
             for (int f = 1; f <= numberOfFiles; f++) {
                 try {
@@ -261,8 +257,11 @@ public class InvertedIndex {
                     // Recorremos las claves correspondientes a este fichero.
                     while (keyIterator.hasNext() && keysByFile > 0) {
                         key = (String) keyIterator.next();
-                        SaveIndexKey(key, bw);  // Salvamos la clave al fichero.
                         keysByFile--;
+                        if(index>=i && index<portionSize) {
+                            SaveIndexKey(key, bw);  // Salvamos la clave al fichero.
+                            index++;
+                        }
                     }
                     bw.close(); // Cerramos el fichero.
                     remainingFiles--;
