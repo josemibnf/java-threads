@@ -1,4 +1,4 @@
-package eps.scp;
+
 
 import com.google.common.collect.HashMultimap;
 import org.apache.commons.lang3.StringUtils;
@@ -19,6 +19,7 @@ public class InvertedIndex
     private final String DIndexFilePrefix = "/IndexFile";   // Prefijo de los ficheros de Índice Invertido.
     private final float DMinimunMatchingPercentage = 0.80f;  // Porcentaje mínimo de matching entre el texto original y la consulta (80%)
     private final int DPaddingMatchText = 20;   // Al mostrar el texto original que se corresponde con la consulta se incrementa en 20 carácteres
+
     //private final int DChunkSize = 100;
 
     // Members
@@ -26,6 +27,12 @@ public class InvertedIndex
     private RandomAccessFile randomInputFile;  // Fichero random para acceder al texto original con mayor porcentaje de matching.
     private int KeySize;            // Número de carácteres de la clave (k-word)
     private HashMultimap<String, Long> Hash = HashMultimap.create();    // Hash Map con el Índice Invertido.
+
+
+    //my members
+    private int NumThreads=1;
+    volatile ConcurrentIndexer[] ci;
+
 
     // Constructores
     public InvertedIndex() {
@@ -43,8 +50,10 @@ public class InvertedIndex
         KeySize = keySize;
     }
 
-    public InvertedIndex(String inputFile, int keySize) {
+    //MAIN
+    public InvertedIndex(String inputFile,int Num_Threads, int keySize) {
         InputFilePath = inputFile;
+        NumThreads = Num_Threads;
         KeySize = keySize;
     }
 
@@ -52,6 +61,46 @@ public class InvertedIndex
         InputFilePath = inputFile;
     }
 
+
+
+
+    //Concurrent main nested in InvertedIndex
+    public void ConcBuildIndex() {
+        //System.out.println("TextFile --> "+InputFilePath);
+        //System.out.println("Threads_Number --> "+NumThreads);
+        //System.out.println("Key_Size --> "+KeySize);
+        File f = new File(InputFilePath);
+        if (f.exists()){
+            //System.out.println("FileSize --> "+f.length());
+            Thread[] threads= new Thread[NumThreads];
+            ci = new ConcurrentIndexer[NumThreads];
+
+            int inicio = 0;
+            int finnal = 0;
+            int space =(int)f.length()/NumThreads;
+
+            for (int i = 0; i < NumThreads ; i++) {
+                finnal = (i == NumThreads-1)? (int)f.length():finnal +space;
+                ci[i] = new ConcurrentIndexer(inicio,finnal,KeySize,InputFilePath,(int)f.length());
+                threads[i] = new Thread(ci[i]);
+                threads[i].start();
+                inicio= finnal;
+            }
+            for (int i = 0; i < NumThreads; i++) {
+                try {
+                    threads[i].join();
+
+                    Hash.putAll(ci[i].getLocalHash());
+                    System.out.println("localHash"+(1+i)+"--->totalHash");
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+
+
+        }
+
+    }
 
     /* Método para construir el indice invertido, utilizando un HashMap para almacenarlo en memoria */
 
@@ -95,73 +144,7 @@ public class InvertedIndex
         }
     }
 
-    /*
-    public void BuildIndex2() {
-        byte[] chunk = new byte[DChunkSize];
-        int chunkLen = 0, k = 0, countFChars=0;
-        long offset = 0;
 
-        try {
-            File file = new File(InputFilePath);
-            is = new FileInputStream(file);
-            k=chunk.length-1;
-            while((chunkLen = ReadChunk(chunk,k))>=KeySize)
-            {
-                String data = new String(chunk).replaceAll("\n", " ").replaceAll("\r", " ").replaceAll("\t", " ");
-                //countFChars = data.length() - data.replaceAll("\n", "").replaceAll("\r", "").replaceAll("\t", "").length();
-                //.replace("\n", "").replace("\r", "");;
-                for (k=0;k<=(chunkLen-(KeySize)); k++)
-                {
-                    if (offset==582399)
-                        System.out.println("Debug");
-                    try {
-                        char firstCharacter = data.charAt(k);
-                        if (firstCharacter != '\n' && firstCharacter != '\r' && firstCharacter != '\t') {
-                            String key = GetKey(data, k);
-                            if (key=="lugar de l")
-                                System.out.println("Debug");
-                            if (key != null)
-                                AddKey(key, offset);
-                        }
-                        offset++;
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        } catch (FileNotFoundException fnfE) {
-            System.err.println("Error opening Input file.");
-        }
-    }
-*/
-
-    /*
-    private String GetKey(String data, int position)
-    {
-        String cleanData = data.substring(position);
-        cleanData = cleanData.replace("\n", "").replace("\r", "").replace("\t", "");
-        if (cleanData.length()>=KeySize)
-            return (cleanData.substring(0, KeySize));
-        else
-            return null;
-    }
-    */
-
-    /*
-    private int ReadChunk(byte[] chunk, int k){
-        try {
-            System.arraycopy(chunk, k+1, chunk, 0, chunk.length-(k+1));
-            int size = is.read(chunk, chunk.length-(k+1), chunk.length-(chunk.length-(k+1)));
-            if (size>0)
-                return (size+chunk.length-(k+1));
-            else
-                return (0);
-        } catch (IOException e) {
-            System.err.println("Error reading Input file.");
-            return(0);
-        }
-    }
-    */
 
     // Método que añade una k-word y su desplazamiento en el HashMap.
     private void AddKey(String key, long offset){
@@ -171,16 +154,19 @@ public class InvertedIndex
 
     // Método para imprimir por pantalla el índice invertido.
     public void PrintIndex() {
-        Set<String> keySet = Hash.keySet();
-        Iterator keyIterator = keySet.iterator();
-        while (keyIterator.hasNext() ) {
-            String key = (String) keyIterator.next();
-            System.out.print(key + "\t");
-            Collection<Long> values = Hash.get(key);
-            for(Long value : values){
-                System.out.print(value+",");
+        if(!Hash.isEmpty()){
+            Set<String> keySet = Hash.keySet();
+            Iterator keyIterator = keySet.iterator();
+            while (keyIterator.hasNext() ) {
+                String key = (String) keyIterator.next();
+                System.out.print(key + "\t");
+                Collection<Long> values = Hash.get(key);
+                for(Long value : values){
+                    System.out.print(value+",");
+                }
+                System.out.println();
             }
-            System.out.println();
+        }else{ System.out.println("No Inverted Index");
         }
     }
 
@@ -410,5 +396,6 @@ public class InvertedIndex
         }
         System.out.println("Matching at offset "+offset+" ("+ perMatching*100 + "%): "+new String(matchText));
     }
+
 
 }
