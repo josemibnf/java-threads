@@ -101,6 +101,7 @@ public class InvertedIndex {
             //Une cada hashLocal cuando cada hilo termina.
             for (int i = 0; i < numHilos; i++) {
                 try {
+                    System.out.println("Hilo "+i+" listo.");
                     threads[i].join();
                     hashGlobal.putAll(hilos[i].hashLocal);
                 } catch (InterruptedException e) {
@@ -125,8 +126,6 @@ public class InvertedIndex {
             this.is = new RandomAccessFile(InputFilePath, "r");
             this.fin_portion = fin;
             this.start_portion = start;
-            System.out.println(start_portion);
-            System.out.println(fin_portion);
         }
 
         public void run() {
@@ -159,7 +158,6 @@ public class InvertedIndex {
     // Método que añade una k-word y su desplazamiento en el HashMap.
     private void AddKey(String key, long offset, HashMultimap<String, Long> hashLocal) {
         hashLocal.put(key, offset);
-        System.out.print(offset + "\t-> " + key + "\r");
     }
 
     // Método para imprimir por pantalla el índice invertido.
