@@ -90,7 +90,7 @@ public class InvertedIndex {
             long portionSize;
             //Reparticion en hilos.
             int hilo=0;
-            for (long i = 0; i < file.length(); i += portionSize) {
+            for (long i = KeySize-1; i < file.length(); i += portionSize) {
                 portionSize=((file.length()-i)/(numHilos-hilo));
                 hilos[hilo] = new BuildIndexThread(InputFilePath , i, i+portionSize);
                 threads[hilo] = new Thread(hilos[hilo]);
@@ -131,12 +131,7 @@ public class InvertedIndex {
 
         public void run() {
             try {
-                long offset;
-                if(start_portion>0){
-                    offset = start_portion-(KeySize-1);
-                }else {
-                    offset = start_portion;
-                }
+                long offset = start_portion-(KeySize-1);
                 this.is.seek(offset);
                 for( ; offset < this.fin_portion && (car = is.read())!=-1; offset++) {
                     if (car == '\n' || car == '\r' || car == '\t') {
