@@ -59,7 +59,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Indexing_example2" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Indexing" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="test/example2.txt 10 output/example2" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -72,7 +72,7 @@
       </method>
     </configuration>
     <configuration name="Indexing_example3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Indexing" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="test/example3.txt 10 output/example3" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -83,9 +83,9 @@
       </method>
     </configuration>
     <configuration name="Indexing_quijote" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Indexing" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
-      <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 10 output/quijote" />
+      <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 4 10 Output/quijote" />
       <RunnerSettings RunnerId="Debug with VisualVM">
         <option name="visualVMId" value="165925266092786" />
       </RunnerSettings>
@@ -94,7 +94,7 @@
       </method>
     </configuration>
     <configuration name="Query_Example2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Query" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.query" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="&quot;123456789012345&quot; output/example2 test/example2.txt 10" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -105,7 +105,7 @@
       </method>
     </configuration>
     <configuration name="Query_Example3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Query" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.query" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="&quot;345678902456789&quot; output/example3 10" />
       <method v="2">
@@ -113,7 +113,7 @@
       </method>
     </configuration>
     <configuration name="Query_Quijote" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Query" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.query" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="&quot;En un lugar de la Mancha&quot; output/quijote/ test/pg2000.txt 10" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -203,40 +203,6 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>
-          <line>258</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/Indexing.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>
-          <line>162</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>
-          <line>228</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="GetKeyOffsets(key)" />

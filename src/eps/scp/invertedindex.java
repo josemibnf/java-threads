@@ -1,3 +1,4 @@
+package eps.scp;
 
 import com.google.common.collect.HashMultimap;
 import org.apache.commons.lang3.StringUtils;
@@ -91,7 +92,7 @@ public class InvertedIndex {
             int hilo=0;
             for (long i = 0; i < file.length(); i += portionSize) {
                 portionSize=((file.length()-i)/(numHilos-hilo));
-                hilos[hilo] = new BuildIndexThread(InputFilePath ,i, i+portionSize);
+                hilos[hilo] = new BuildIndexThread(InputFilePath , i, i+portionSize);
                 threads[hilo] = new Thread(hilos[hilo]);
                 threads[hilo].start();
                 hilo++;
@@ -130,12 +131,14 @@ public class InvertedIndex {
 
         public void run() {
             try {
+                long offset;
                 if(start_portion>0){
-                    this.is.seek(start_portion-KeySize);
+                    offset = start_portion-(KeySize-1);
                 }else {
-                    this.is.seek(start_portion);
+                    offset = start_portion;
                 }
-                for(long offset = start_portion; offset < this.fin_portion && (car = is.read())!=-1; offset++) {
+                this.is.seek(offset);
+                for( ; offset < this.fin_portion && (car = is.read())!=-1; offset++) {
                     if (car == '\n' || car == '\r' || car == '\t') {
                         // Sustituimos los carácteres de \n,\r,\t en la clave por un espacio en blanco.
                         if (key.length() == KeySize && key.charAt(KeySize - 1) != ' ')
@@ -231,6 +234,7 @@ public class InvertedIndex {
         SaveIndexThread(HashMultimap<String, Long> hashLocal, String outputDirectory, long portionSize, int i) {
             KeySet = hashLocal.keySet();
             this.i = i;
+            this.portionSize = portionSize;
         }
 
         public void run() {
