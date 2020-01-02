@@ -1,6 +1,6 @@
 package eps.scp;
 
-public class Indexing {
+public class indexing {
 
     public static void main(String[] args)
     {

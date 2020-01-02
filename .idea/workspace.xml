@@ -6,7 +6,84 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7a0cf95-e2b8-424c-b312-1b106d6fd188" name="Default" comment="" />
+    <list default="true" id="b7a0cf95-e2b8-424c-b312-1b106d6fd188" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/indexing_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile001" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile002" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile003" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile003" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile004" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile004" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile005" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile005" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile006" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile006" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile007" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile007" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile008" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile008" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile009" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile009" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile010" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile010" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile011" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile011" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile012" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile012" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile013" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile013" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile014" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile014" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile015" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile015" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile016" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile016" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile017" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile017" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile018" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile018" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile019" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile019" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile020" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile020" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile021" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile021" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile022" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile022" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile023" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile023" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile024" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile024" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile025" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile025" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile026" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile026" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile027" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile027" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile028" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile028" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile029" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile029" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile030" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile030" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile031" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile031" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile032" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile032" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile033" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile033" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile034" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile034" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile035" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile035" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile036" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile036" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile037" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile037" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile038" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile038" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile039" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile039" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile040" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile040" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile041" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile041" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile042" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile042" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile043" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile043" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile044" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile044" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile045" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile045" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile046" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile046" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile047" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile047" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile048" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile048" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile049" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile049" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile050" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile050" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile051" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile051" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile052" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile052" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile053" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile053" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile054" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile054" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile055" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile055" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile056" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile056" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile057" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile057" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile058" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile058" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile059" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile059" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile060" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile060" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile061" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile061" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile062" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile062" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile063" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile063" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile064" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile064" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile065" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile065" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile066" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile066" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile067" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile067" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile068" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile068" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile069" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile069" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eps/scp/indexing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/indexing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eps/scp/invertedindex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eps/scp/query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/query.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +97,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1S0fHM1eKd7U4QBcWHaYicRIOAI" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -59,7 +140,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Indexing_example2" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Indexing" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="test/example2.txt 10 output/example2" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -72,7 +153,7 @@
       </method>
     </configuration>
     <configuration name="Indexing_example3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Indexing" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="test/example3.txt 10 output/example3" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -83,7 +164,7 @@
       </method>
     </configuration>
     <configuration name="Indexing_quijote" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Indexing" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 10 output/quijote" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -94,7 +175,7 @@
       </method>
     </configuration>
     <configuration name="Query_Example2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Query" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.query" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="&quot;123456789012345&quot; output/example2 test/example2.txt 10" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -105,7 +186,7 @@
       </method>
     </configuration>
     <configuration name="Query_Example3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Query" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.query" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="&quot;345678902456789&quot; output/example3 10" />
       <method v="2">
@@ -113,7 +194,7 @@
       </method>
     </configuration>
     <configuration name="Query_Quijote" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="eps.scp.Query" />
+      <option name="MAIN_CLASS_NAME" value="eps.scp.query" />
       <module name="Indexing" />
       <option name="PROGRAM_PARAMETERS" value="&quot;En un lugar de la Mancha&quot; output/quijote/ test/pg2000.txt 10" />
       <RunnerSettings RunnerId="Debug with VisualVM">
@@ -202,6 +283,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -209,11 +301,6 @@
           <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>
           <line>258</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eps/scp/Indexing.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/eps/scp/InvertedIndex.java</url>

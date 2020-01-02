@@ -3,7 +3,7 @@ package eps.scp;
 /**
  * Created by Nando on 8/10/19.
  */
-public class Query
+public class query
 {
 
     public static void main(String[] args)
