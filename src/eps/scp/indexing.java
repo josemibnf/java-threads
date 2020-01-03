@@ -9,11 +9,10 @@ X8592934L Yassine El Kihal.
 --------------------------------------------------------------- */
 public class indexing {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         InvertedIndex hash;
 
-        if (args.length <2 || args.length>4)
+        if (args.length < 2 || args.length > 4)
             System.err.println("Erro in Parameters. Usage: Indexing <TextFile> [<Key_Size>] [<Index_Directory>]");
         if (args.length < 2)
             hash = new InvertedIndex(args[0]);
@@ -26,11 +25,11 @@ public class indexing {
 
         System.out.println("--------------MAIN--print index");
 
-        if (args.length > 3)
+        if (args.length > 3) {
             hash.SaveIndex(args[3]);
-        else
+        } else {
             hash.PrintIndex();
+        }
     }
-
 }
 

@@ -29,6 +29,7 @@ public class InvertedIndex {
 
     // Members
     private int numHilos;
+    private int hilo_actual = 1;
     private String InputFilePath;       // Contiene la ruta del fichero a Indexar.
     private RandomAccessFile randomInputFile;  // Fichero random para acceder al texto original con mayor porcentaje de matching.
     private int KeySize;            // Número de carácteres de la clave (k-word)
@@ -73,7 +74,7 @@ public class InvertedIndex {
     }
 
     /* Método para construir el indice invertido, utilizando un HashMap para almacenarlo en memoria */
-    public void BuildIndex(){
+    public synchronized void BuildIndex(){
 
         BuildIndexThread hilos[] = new BuildIndexThread[numHilos];  //Array de hilos.
         Thread threads[] = new Thread[numHilos];
@@ -92,27 +93,29 @@ public class InvertedIndex {
             int hilo=0;
             for (long i = KeySize-1; i < file.length(); i += portionSize) {
                 portionSize=((file.length()-i)/(numHilos-hilo));
-                hilos[hilo] = new BuildIndexThread(InputFilePath , i, i+portionSize);
+                hilos[hilo] = new BuildIndexThread(InputFilePath , i, i+portionSize, this);
                 threads[hilo] = new Thread(hilos[hilo]);
                 threads[hilo].start();
                 hilo++;
             }
 
-            //Une cada hashLocal cuando cada hilo termina.
-            for (int i = 0; i < numHilos; i++) {
-                try {
-                    System.out.println("Hilo "+i+" listo.");
-                    threads[i].join();
-                    hashGlobal.putAll(hilos[i].hashLocal);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            try{
+                synchronized (this) {
+                    System.out.println("\nPues ahora a esperar a que terminen todos.....\n");
+                    this.wait();
+                    System.out.println("\nBueno al parecer todos los hilos han hecho su faena\n");
                 }
-
+            } catch (InterruptedException fnfE) {
+                System.err.println("Error sincronizacion.");
             }
 
-        } catch (FileNotFoundException fnfE) {
+
+        }  catch (FileNotFoundException fnfE) {
             System.err.println("Error opening Input file.");
+        }  catch (IOException ioE) {
+            System.err.println("Error read Input file.");
         }
+
     }
 
     public class BuildIndexThread implements Runnable {
@@ -120,12 +123,13 @@ public class InvertedIndex {
         long fin_portion; long start_portion;
         int car;
         String key="";
-        HashMultimap<String, Long> hashLocal = HashMultimap.create();
+        InvertedIndex external;
 
-        BuildIndexThread(String InputFilePath, long start, long fin) throws FileNotFoundException {
+        BuildIndexThread(String InputFilePath, long start, long fin, InvertedIndex external) throws FileNotFoundException {
             this.is = new RandomAccessFile(InputFilePath, "r");
             this.fin_portion = fin;
             this.start_portion = start;
+            this.external = external;  //instancia al objeto invertedIndex
         }
 
         public void run() {
@@ -147,8 +151,18 @@ public class InvertedIndex {
                         key = key.substring(1, KeySize) + (char) car;
                     if (key.length() == KeySize)
                         // Si tenemos una clave completa, la añadimos al Hash, junto a su desplazamiento dentro del fichero.
-                        AddKey(key, offset - KeySize + 1, hashLocal);
+
+                        AddKey(key, offset - KeySize + 1);
                 }
+
+                synchronized (external){
+                    System.out.println("\nHilo " + hilo_actual + " --> listo\n");
+                    if(hilo_actual == numHilos){
+                        external.notify();
+                    }
+                    hilo_actual++;
+                }
+
             }catch (IOException e){
                 System.err.println("Error read Input file.");
             }
@@ -156,8 +170,9 @@ public class InvertedIndex {
     }
 
     // Método que añade una k-word y su desplazamiento en el HashMap.
-    private void AddKey(String key, long offset, HashMultimap<String, Long> hashLocal) {
-        hashLocal.put(key, offset);
+    private synchronized void AddKey(String key, long offset) {  //Eliminamos condiciones de carrera para acceder a hashGlobal.
+        hashGlobal.put(key, offset);
+        //System.out.print(offset+"\t-> "+key+"\r");
     }
 
     // Método para imprimir por pantalla el índice invertido.
@@ -278,34 +293,38 @@ public class InvertedIndex {
         File folder = new File(inputDirectory);
         File[] listOfFiles = folder.listFiles();
 
+        hilo_actual = 1;
+
         LoadIndexThread hilos[] = new LoadIndexThread[numHilos];  //Array de hilos.
         long portionSize;
         int hilo=0;
         for (int i = 0; i < listOfFiles.length; i += portionSize) {
             portionSize=((listOfFiles.length-i)/(numHilos-hilo));
-            hilos[hilo] = new LoadIndexThread(listOfFiles);
+            hilos[hilo] = new LoadIndexThread(listOfFiles, this);
             hilos[hilo].start();
             hilo++;
         }
 
-        //Une cada hashLocal cuando cada hilo termina.
-        for (int i = 0; i < numHilos; i++) {
-            try {
-                hilos[i].join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        try {
+            synchronized (this) {
+                this.wait();
+                System.out.println("\n Ya estan todos los hilos cargados en hashGlobal.\n");
             }
-            hashGlobal.putAll(hilos[i].hashLocal);
+        } catch (InterruptedException fnfE) {
+            System.err.println("Error sincronizacion.");
         }
+
 
     }
 
     public class LoadIndexThread extends Thread {
 
         File[] listOfFiles;
-        HashMultimap hashLocal = HashMultimap.create();
+        InvertedIndex external;
 
-        LoadIndexThread(File[] listOfFiles) {
+        LoadIndexThread(File[] listOfFiles, InvertedIndex external) {
+            this.listOfFiles = listOfFiles;
+            this.external = external;
         }
 
         public void run() {
@@ -328,7 +347,7 @@ public class InvertedIndex {
                                 // Recorremos los offsets para esta clave y los añadimos al HashMap
                                 for (int i = 0; i < offsets.length; i++) {
                                     long offset = Long.parseLong(offsets[i]);
-                                    hashLocal.put(key, offset);
+                                    AddKey( key, offset);
                                 }
                             }
                         } catch (IOException e) {
@@ -341,6 +360,15 @@ public class InvertedIndex {
                     }
                 }
             }
+
+            synchronized (external){
+                System.out.println("\nHilo " + hilo_actual + " --> cargado\n");
+                if(hilo_actual == numHilos){
+                    external.notify();
+                }
+                hilo_actual++;
+            }
+
         }
 
     }
