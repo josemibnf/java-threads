@@ -6,7 +6,93 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7a0cf95-e2b8-424c-b312-1b106d6fd188" name="Default" comment="" />
+    <list default="true" id="b7a0cf95-e2b8-424c-b312-1b106d6fd188" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile168" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile168" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile169" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile169" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile170" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile170" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile171" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile171" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile172" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile172" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile173" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile173" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile174" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile174" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile175" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile175" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile176" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile176" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile177" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile177" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile178" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile178" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile179" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile179" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile180" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile180" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile181" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile181" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile182" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile182" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile183" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile183" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile184" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile184" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile185" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile185" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile186" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile186" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile187" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile187" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile188" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile188" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile189" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile189" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile190" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile190" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile191" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile191" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile192" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile192" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile193" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile193" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile194" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile194" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile195" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile195" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile196" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile196" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile197" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile197" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile198" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile198" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile199" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile199" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile200" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile200" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile201" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile201" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile202" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile202" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile203" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile203" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile204" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile204" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile205" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile205" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile206" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile206" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile207" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile207" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile208" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile208" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile209" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile209" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile210" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile210" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile211" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile211" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile212" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile212" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile213" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile213" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile214" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile214" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile215" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile215" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile216" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile216" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile217" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile217" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile218" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile218" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile219" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile219" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile220" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile220" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile221" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile221" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile222" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile222" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile223" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile223" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile224" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile224" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile225" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile225" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile226" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile226" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile227" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile227" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile228" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile228" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile229" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile229" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile230" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile230" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile231" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile231" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile232" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile232" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile233" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile233" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile234" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile234" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile235" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile235" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile236" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile236" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile237" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile237" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile238" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile238" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile239" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile239" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile240" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile240" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile241" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile241" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile242" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile242" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile243" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile243" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile244" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile244" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile245" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile245" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile246" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile246" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile247" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile247" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile248" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile248" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile249" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile249" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile250" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile250" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +106,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1S0fHM1eKd7U4QBcWHaYicRIOAI" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -201,6 +291,17 @@
       <updated>1570471581823</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
