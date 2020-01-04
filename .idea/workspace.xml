@@ -258,15 +258,12 @@
       <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile248" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile248" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile249" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile249" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile250" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile250" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Indexing/META-INF/Indexing.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$BuildIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$BuildIndexThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$LoadIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$LoadIndexThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$SaveIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$SaveIndexThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/indexing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/indexing.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eps/scp/indexing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/indexing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eps/scp/invertedindex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -350,7 +347,7 @@
     <configuration name="Indexing_quijote" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
-      <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 4 10 Output/quijote" />
+      <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 100 1000 Output/quijote" />
       <RunnerSettings RunnerId="Debug with VisualVM">
         <option name="visualVMId" value="165925266092786" />
       </RunnerSettings>

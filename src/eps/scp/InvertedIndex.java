@@ -34,6 +34,7 @@ public class InvertedIndex {
     private RandomAccessFile randomInputFile;  // Fichero random para acceder al texto original con mayor porcentaje de matching.
     private int KeySize;            // Número de carácteres de la clave (k-word)
     private HashMultimap<String, Long> hashGlobal = HashMultimap.create();    // hashGlobal Map con el Índice Invertido.
+    private Estadisticas estGlobales;
 
     // Constructores
     public InvertedIndex() {
@@ -68,6 +69,43 @@ public class InvertedIndex {
         InputFilePath = inputFile;
     }
 
+    public class Estadisticas{
+        long num_keys_generados;
+        long num_values_generados;
+        long num_bytes_leidos;
+        long progress;
+        long bytes_total;
+
+        Estadisticas(long bytes_total){
+            this.num_keys_generados=0;
+            this.num_values_generados=0;
+            this.num_bytes_leidos=0;
+            this.progress =0;
+            this.bytes_total = bytes_total;
+        }
+
+        public synchronized void actualiza(Boolean keys, Boolean bytes, Boolean values) {
+            if (keys) {
+                this.num_keys_generados++;
+            }
+            if (bytes) {
+                this.num_bytes_leidos++;
+                progress = (this.num_bytes_leidos / bytes_total) * 100;
+            }
+            if (values) {
+                this.num_values_generados++;
+            }
+        }
+
+        public synchronized void printa(){
+            System.out.println("\nKeys Generados -->  " + this.num_keys_generados);
+            System.out.println("\nBytes Leidos -->  " + this.num_bytes_leidos);
+            System.out.println("\nValores Generados -->  " + this.num_values_generados);
+            System.out.println("\nPorcentaje de progreso -->  " + this.progress);
+        }
+
+    }
+
 
     private Boolean isNotValid(long length){
         return length/numHilos < KeySize;
@@ -86,6 +124,8 @@ public class InvertedIndex {
                 System.out.println("ERROR: Variables incompatibles.");
                 System.exit(-1);
             }
+
+            estGlobales = new Estadisticas(file.length());
 
             // El portionSize define la porcion de archivo por cada hilo.
             long portionSize;
@@ -109,6 +149,7 @@ public class InvertedIndex {
                 System.err.println("Error sincronizacion.");
             }
 
+            estGlobales.printa();
 
         }  catch (FileNotFoundException fnfE) {
             System.err.println("Error opening Input file.");
@@ -149,10 +190,15 @@ public class InvertedIndex {
                     else
                         // Si la clave es igua a K, entonces eliminaos su primier carácter y le concatenamos el nuevo carácter leído (implementamos una slidding window sobre el fichero a indexar).
                         key = key.substring(1, KeySize) + (char) car;
-                    if (key.length() == KeySize)
+                    if (key.length() == KeySize){
                         // Si tenemos una clave completa, la añadimos al Hash, junto a su desplazamiento dentro del fichero.
-
+                        estGlobales.actualiza(true, false, true);
                         AddKey(key, offset - KeySize + 1);
+                    }else if (offset<=this.fin_portion-(KeySize-1)) {
+                        estGlobales.actualiza(false, true, true);
+                    }else{
+                        estGlobales.actualiza( false, false, true);
+                    }
                 }
 
                 synchronized (external){
