@@ -8,6 +8,23 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a0cf95-e2b8-424c-b312-1b106d6fd188" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile001" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile002" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile003" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile003" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile004" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile004" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile005" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile005" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile006" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile006" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile007" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile007" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile008" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile008" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile009" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile009" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile010" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile010" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile011" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile011" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile012" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile012" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile013" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile013" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile014" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile014" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile015" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile015" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile016" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile016" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile017" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile017" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile001" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile002" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/quijote/IndexFile003" beforeDir="false" afterPath="$PROJECT_DIR$/Output/quijote/IndexFile003" afterDir="false" />
@@ -261,8 +278,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$BuildIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$BuildIndexThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$LoadIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$LoadIndexThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$SaveIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$SaveIndexThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/invertedindex.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -305,7 +320,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Indexing_quijote">
+  <component name="RunManager" selected="Application.Indexing_example2">
     <configuration default="true" type="tests" factoryName="Unittests">
       <module name="Indexing" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -323,7 +338,7 @@
     <configuration name="Indexing_example2" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
-      <option name="PROGRAM_PARAMETERS" value="test/example2.txt 10 output/example2" />
+      <option name="PROGRAM_PARAMETERS" value="test/example2.txt 4 10 output/example2" />
       <RunnerSettings RunnerId="Debug with VisualVM">
         <option name="visualVMId" value="132732498004554" />
       </RunnerSettings>
@@ -347,7 +362,7 @@
     <configuration name="Indexing_quijote" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="eps.scp.indexing" />
       <module name="Indexing" />
-      <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 100 1000 Output/quijote" />
+      <option name="PROGRAM_PARAMETERS" value="test/pg2000.txt 4 50 Output/quijote" />
       <RunnerSettings RunnerId="Debug with VisualVM">
         <option name="visualVMId" value="165925266092786" />
       </RunnerSettings>

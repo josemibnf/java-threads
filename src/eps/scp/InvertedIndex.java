@@ -73,35 +73,36 @@ public class InvertedIndex {
         long num_keys_generados;
         long num_values_generados;
         long num_bytes_leidos;
-        long progress;
+        double progress;
         long bytes_total;
 
         Estadisticas(long bytes_total){
             this.num_keys_generados=0;
             this.num_values_generados=0;
             this.num_bytes_leidos=0;
-            this.progress =0;
             this.bytes_total = bytes_total;
-        }
 
-        public synchronized void actualiza(Boolean keys, Boolean bytes, Boolean values) {
-            if (keys) {
-                this.num_keys_generados++;
-            }
-            if (bytes) {
-                this.num_bytes_leidos++;
-                progress = (this.num_bytes_leidos / bytes_total) * 100;
-            }
-            if (values) {
-                this.num_values_generados++;
-            }
+
+    }
+
+        public synchronized void actualiza(long keys, long bytes, long values) {
+                this.num_keys_generados+=keys;
+                this.num_values_generados+=values;
+                this.num_bytes_leidos+=bytes;
+                this.progress = ((double) this.num_bytes_leidos / this.bytes_total)*100;
+                System.out.println("\n");
+                System.out.println(this.num_bytes_leidos);
+                System.out.println(bytes_total);
+                System.out.println("\n");
+
+
         }
 
         public synchronized void printa(){
             System.out.println("\nKeys Generados -->  " + this.num_keys_generados);
             System.out.println("\nBytes Leidos -->  " + this.num_bytes_leidos);
             System.out.println("\nValores Generados -->  " + this.num_values_generados);
-            System.out.println("\nPorcentaje de progreso -->  " + this.progress);
+            System.out.println("\nPorcentaje de progreso -->  " + this.progress + " %");
         }
 
     }
@@ -131,6 +132,7 @@ public class InvertedIndex {
             long portionSize;
             //Reparticion en hilos.
             int hilo=0;
+            estGlobales.actualiza(0, KeySize-1, 0);  // Primeros bytes antes del offset=0.
             for (long i = KeySize-1; i < file.length(); i += portionSize) {
                 portionSize=((file.length()-i)/(numHilos-hilo));
                 hilos[hilo] = new BuildIndexThread(InputFilePath , i, i+portionSize, this);
@@ -182,22 +184,22 @@ public class InvertedIndex {
                         // Sustituimos los carácteres de \n,\r,\t en la clave por un espacio en blanco.
                         if (key.length() == KeySize && key.charAt(KeySize - 1) != ' ')
                             key = key.substring(1, KeySize) + ' ';
+                            estGlobales.actualiza(0,1,1);
                         continue;
                     }
-                    if (key.length() < KeySize)
+                    if (key.length() < KeySize){
                         // Si la clave es menor de K, entonces le concatenamos el nuevo carácter leído.
                         key = key + (char) car;
-                    else
+                        estGlobales.actualiza(0, 0, 1);
+                    }else{
                         // Si la clave es igua a K, entonces eliminaos su primier carácter y le concatenamos el nuevo carácter leído (implementamos una slidding window sobre el fichero a indexar).
                         key = key.substring(1, KeySize) + (char) car;
+                        estGlobales.actualiza(1, 1, 1);
+                    }
+
                     if (key.length() == KeySize){
                         // Si tenemos una clave completa, la añadimos al Hash, junto a su desplazamiento dentro del fichero.
-                        estGlobales.actualiza(true, false, true);
                         AddKey(key, offset - KeySize + 1);
-                    }else if (offset<=this.fin_portion-(KeySize-1)) {
-                        estGlobales.actualiza(false, true, true);
-                    }else{
-                        estGlobales.actualiza( false, false, true);
                     }
                 }
 
