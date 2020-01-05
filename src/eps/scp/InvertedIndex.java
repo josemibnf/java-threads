@@ -39,7 +39,7 @@ public class InvertedIndex {
     private int KeySize;            // Número de carácteres de la clave (k-word)
     private HashMultimap<String, Long> hashGlobal = HashMultimap.create();    // hashGlobal Map con el Índice Invertido.
     private Estadisticas estGlobales;
-    private static Semaphore semaphore = new Semaphore(1);
+    private static Semaphore semaphore = new Semaphore(0);
 
     // Constructores
     public InvertedIndex() {
