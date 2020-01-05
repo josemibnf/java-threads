@@ -12,14 +12,17 @@ public class indexing {
     public static void main(String[] args) {
         InvertedIndex hash;
 
-        if (args.length < 2 || args.length > 4)
+        if (args.length < 2 || args.length > 5)
             System.err.println("Erro in Parameters. Usage: Indexing <TextFile> [<Key_Size>] [<Index_Directory>]");
         if (args.length < 2)
             hash = new InvertedIndex(args[0]);
         else if (args.length == 2)
             hash = new InvertedIndex(args[0], Integer.parseInt(args[1]));  //inputFile, keySize
-        else
+        else if (args.length < 5)
             hash = new InvertedIndex(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2])); //inputFile, numHilos, KeySize
+        else
+            hash = new InvertedIndex(args[0], Integer.parseInt(args[1]), Integer.parseInt(args[2]), Integer.parseInt(args[4])); //inputFile, numHilos, KeySize, M
+
 
         hash.BuildIndex();
 

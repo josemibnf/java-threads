@@ -28,6 +28,7 @@ public class InvertedIndex {
     //private final int DChunkSize = 100;
 
     // Members
+    private int M;
     private int numHilos;
     private int hilo_actual = 1;
     private String InputFilePath;       // Contiene la ruta del fichero a Indexar.
@@ -41,6 +42,7 @@ public class InvertedIndex {
         InputFilePath = null;
         KeySize = DKeySize;
         numHilos = DNumHilos;
+        M = 10;
     }
 
     public InvertedIndex(String inputFile) {
@@ -63,6 +65,19 @@ public class InvertedIndex {
         this.InputFilePath = inputFile;
         this.KeySize = keySize;
         this.numHilos = numHilos;
+        this.M=10;
+    }
+
+    public InvertedIndex(String inputFile, int numHilos, int keySize, int M) {
+        this.InputFilePath = inputFile;
+        this.KeySize = keySize;
+        this.numHilos = numHilos;
+        if (M<=100){
+            this.M = M;
+        }else{
+            System.out.println("ERROR: M es un porcentaje, no introduzcas un valor por encima de 100.");
+            this.M=10;
+        }
     }
 
     public void SetFileName(String inputFile) {
@@ -81,8 +96,6 @@ public class InvertedIndex {
             this.num_values_generados=0;
             this.num_bytes_leidos=0;
             this.bytes_total = bytes_total;
-
-
     }
 
         public synchronized void actualiza(long keys, long bytes, long values) {
@@ -90,21 +103,22 @@ public class InvertedIndex {
                 this.num_values_generados+=values;
                 this.num_bytes_leidos+=bytes;
                 this.progress = ((double) this.num_bytes_leidos / this.bytes_total)*100;
-                System.out.println("\n");
-                System.out.println(this.num_bytes_leidos);
-                System.out.println(bytes_total);
-                System.out.println("\n");
-
-
         }
 
         public synchronized void printa(){
             System.out.println("\nKeys Generados -->  " + this.num_keys_generados);
-            System.out.println("\nBytes Leidos -->  " + this.num_bytes_leidos);
+            System.out.println("\nBytes Leidos -->  " + this.num_bytes_leidos);System.out.println(this.bytes_total);
             System.out.println("\nValores Generados -->  " + this.num_values_generados);
-            System.out.println("\nPorcentaje de progreso -->  " + this.progress + " %");
+            System.out.println("\nPorcentaje de progreso -->  " + this.progress + " %\n\n\n");
         }
 
+        public synchronized void printaM(long keys, long bytes, long values){
+            this.actualiza(keys, bytes, values);
+            if ((int)progress==M){
+                System.out.println("\nMuestra estadisticas globales en el punto "+ M + "");
+                this.printa();
+            }
+        }
     }
 
 
@@ -132,7 +146,7 @@ public class InvertedIndex {
             long portionSize;
             //Reparticion en hilos.
             int hilo=0;
-            estGlobales.actualiza(0, KeySize-1, 0);  // Primeros bytes antes del offset=0.
+            estGlobales.printaM(0, KeySize-1, 0);  // Primeros bytes antes del offset=0.
             for (long i = KeySize-1; i < file.length(); i += portionSize) {
                 portionSize=((file.length()-i)/(numHilos-hilo));
                 hilos[hilo] = new BuildIndexThread(InputFilePath , i, i+portionSize, this);
@@ -145,7 +159,7 @@ public class InvertedIndex {
                 synchronized (this) {
                     System.out.println("\nPues ahora a esperar a que terminen todos.....\n");
                     this.wait();
-                    System.out.println("\nBueno al parecer todos los hilos han hecho su faena\n");
+                    System.out.println("\nBueno al parecer todos los hilos han hecho su faena");
                 }
             } catch (InterruptedException fnfE) {
                 System.err.println("Error sincronizacion.");
@@ -167,12 +181,14 @@ public class InvertedIndex {
         int car;
         String key="";
         InvertedIndex external;
+        Estadisticas estParcial;
 
         BuildIndexThread(String InputFilePath, long start, long fin, InvertedIndex external) throws FileNotFoundException {
             this.is = new RandomAccessFile(InputFilePath, "r");
             this.fin_portion = fin;
             this.start_portion = start;
             this.external = external;  //instancia al objeto invertedIndex
+            this.estParcial = new Estadisticas(fin-start);
         }
 
         public void run() {
@@ -184,17 +200,20 @@ public class InvertedIndex {
                         // Sustituimos los carácteres de \n,\r,\t en la clave por un espacio en blanco.
                         if (key.length() == KeySize && key.charAt(KeySize - 1) != ' ')
                             key = key.substring(1, KeySize) + ' ';
-                            estGlobales.actualiza(0,1,1);
+                            estGlobales.printaM(0,1,1);
+                            estParcial.actualiza(0,1,1);
                         continue;
                     }
                     if (key.length() < KeySize){
                         // Si la clave es menor de K, entonces le concatenamos el nuevo carácter leído.
                         key = key + (char) car;
                         estGlobales.actualiza(0, 0, 1);
+                        estParcial.actualiza(0,0,1);
                     }else{
                         // Si la clave es igua a K, entonces eliminaos su primier carácter y le concatenamos el nuevo carácter leído (implementamos una slidding window sobre el fichero a indexar).
                         key = key.substring(1, KeySize) + (char) car;
-                        estGlobales.actualiza(1, 1, 1);
+                        estGlobales.printaM(1, 1, 1);
+                        estParcial.printaM(1,1,1);
                     }
 
                     if (key.length() == KeySize){
@@ -204,7 +223,8 @@ public class InvertedIndex {
                 }
 
                 synchronized (external){
-                    System.out.println("\nHilo " + hilo_actual + " --> listo\n");
+                    System.out.println("\n\nHilo " + hilo_actual + " --> listo");
+                    estParcial.printa();
                     if(hilo_actual == numHilos){
                         external.notify();
                     }
