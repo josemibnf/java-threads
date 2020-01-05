@@ -8,28 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a0cf95-e2b8-424c-b312-1b106d6fd188" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile001" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile002" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile003" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile003" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile018" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile018" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile019" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile019" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile020" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile020" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile021" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile021" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile022" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile022" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile023" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile023" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile024" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile024" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile025" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile025" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile026" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile026" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile027" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile027" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile028" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile028" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile029" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile029" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile030" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile030" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile031" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile031" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile032" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile032" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile033" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile033" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile034" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile034" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/example2/indexfile035" beforeDir="false" afterPath="$PROJECT_DIR$/Output/example2/indexfile035" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$BuildIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$BuildIndexThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$LoadIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$LoadIndexThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$SaveIndexThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Indexing/eps/scp/InvertedIndex$SaveIndexThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eps/scp/InvertedIndex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

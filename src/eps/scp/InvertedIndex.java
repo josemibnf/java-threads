@@ -8,6 +8,9 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /* ---------------------------------------------------------------
 Práctica 2.
@@ -36,6 +39,7 @@ public class InvertedIndex {
     private int KeySize;            // Número de carácteres de la clave (k-word)
     private HashMultimap<String, Long> hashGlobal = HashMultimap.create();    // hashGlobal Map con el Índice Invertido.
     private Estadisticas estGlobales;
+    private static Semaphore semaphore = new Semaphore(1);
 
     // Constructores
     public InvertedIndex() {
@@ -90,6 +94,7 @@ public class InvertedIndex {
         long num_bytes_leidos;
         double progress;
         long bytes_total;
+        Lock l = new ReentrantLock();
 
         Estadisticas(long bytes_total){
             this.num_keys_generados=0;
@@ -98,11 +103,12 @@ public class InvertedIndex {
             this.bytes_total = bytes_total;
     }
 
-        public synchronized void actualiza(long keys, long bytes, long values) {
+        public synchronized Lock actualiza(long keys, long bytes, long values) {
                 this.num_keys_generados+=keys;
                 this.num_values_generados+=values;
                 this.num_bytes_leidos+=bytes;
                 this.progress = ((double) this.num_bytes_leidos / this.bytes_total)*100;
+            return null;
         }
 
         public synchronized void printa(){
@@ -112,11 +118,16 @@ public class InvertedIndex {
             System.out.println("\nPorcentaje de progreso -->  " + this.progress + " %\n\n\n");
         }
 
-        public synchronized void printaM(long keys, long bytes, long values){
-            this.actualiza(keys, bytes, values);
-            if ((int)progress==M){
-                System.out.println("\nMuestra estadisticas globales en el punto "+ M + "");
-                this.printa();
+        public void printaM(long keys, long bytes, long values){
+            l.lock();
+            try{
+                this.actualiza(keys, bytes, values);
+                if ((int)progress==M){
+                    System.out.println("\nMuestra estadisticas globales en el punto "+ M + "");
+                    this.printa();
+                }
+            }finally {
+                l.unlock();
             }
         }
     }
@@ -238,9 +249,17 @@ public class InvertedIndex {
     }
 
     // Método que añade una k-word y su desplazamiento en el HashMap.
-    private synchronized void AddKey(String key, long offset) {  //Eliminamos condiciones de carrera para acceder a hashGlobal.
-        hashGlobal.put(key, offset);
-        //System.out.print(offset+"\t-> "+key+"\r");
+    private void AddKey(String key, long offset)  {  //Eliminamos condiciones de carrera para acceder a hashGlobal.
+        try {
+            semaphore.acquire();
+            hashGlobal.put(key, offset);
+            //System.out.print(offset+"\t-> "+key+"\r");
+        }
+        catch ( InterruptedException ex) {
+        }
+        finally {
+            semaphore.release();
+        }
     }
 
     // Método para imprimir por pantalla el índice invertido.
