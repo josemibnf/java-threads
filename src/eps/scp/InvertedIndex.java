@@ -208,7 +208,7 @@ public class InvertedIndex {
                         // Si la clave es menor de K, entonces le concatenamos el nuevo carácter leído.
                         key = key + (char) car;
                         estGlobales.actualiza(0, 0, 1);
-                        estParcial.actualiza(0,0,1);
+                        estParcial.actualiza(0,1,1);
                     }else{
                         // Si la clave es igua a K, entonces eliminaos su primier carácter y le concatenamos el nuevo carácter leído (implementamos una slidding window sobre el fichero a indexar).
                         key = key.substring(1, KeySize) + (char) car;
